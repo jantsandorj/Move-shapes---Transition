@@ -1,0 +1,60 @@
+main{
+    width: 500px;
+    height: 500px;
+    border: 5px red solid;
+    position: relative;
+    display: flex;      
+    justify-content: center;
+    align-items: center;
+}
+p{
+    font-size: large;
+    width: 100%;
+    align-self: center;
+
+}
+div{
+    width: 100px;
+    height: 100px;
+    
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    position: absolute;
+}
+.first{
+    background-color: red;
+    z-index: 1;
+    border-radius: 50%;
+    transition: 2s 0s transform linear;
+}
+.second{
+    background-color: green;
+    transition-duration: 2s;
+    transition-property: transform, border-radius;
+}
+.third{
+    background-color: blue;
+    z-index: -1;
+    position: absolute;
+    bottom: 200px;
+    right: 200px;
+    transition-property: bottom, right;
+    transition-duration: 1s, 1s;
+    transition-delay: 0s,1s;
+}
+main:hover .first{ 
+    transform: translate(-200%,-200%);
+    border-radius: 50%;
+}    
+main:hover .second{
+    transform: translate(200%,-200%);
+    border-radius: 0;
+    background-color: rgb(226, 177, 27);
+}
+main:hover .third{
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
